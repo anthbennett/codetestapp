@@ -11,6 +11,10 @@ class ProfilePicUploaderUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [100, 150, :north]
   end
   
+  version :logo do
+    resize_to_fit(100,100)
+  end
+
   version :thumbnail do
     resize_to_fit(50, 50)
   end
